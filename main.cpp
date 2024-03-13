@@ -7,7 +7,7 @@ using namespace std;
 
 
 
-
+// interface for using encryption algorithms
 
 class EncryptionAlgorithm {
 public:
@@ -21,7 +21,7 @@ public:
 
 
 
-
+// CaesarCipher Algorithms
 class CaesarCipher : public EncryptionAlgorithm {
 public:
     string encrypt(const string& input, int key) const override {
@@ -54,7 +54,7 @@ private:
 
 
 
-
+//******************* AtbashCipher algorithm *********//
 class AtbashCipher : public EncryptionAlgorithm {
 public:
     string encrypt(const string& input, int key) const override {
@@ -191,6 +191,7 @@ int main() {
             cerr << "Invalid choice. Exiting program.\n";
             return 1;
     }
+
 
     FileEncryptor encryptor(fileName);
     encryptor.encrypt(key, *selectedAlgorithm);
